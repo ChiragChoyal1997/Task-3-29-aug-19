@@ -10,14 +10,15 @@ public class SplitCountry {
         String s1;
         int start = 0;        
         while(len>start){
-            try{
-                s1 = s.substring(start,s.indexOf(",", start));
+                int y = s.indexOf(",", start);
+                if(y>0){
+                s1 = s.substring(start,y);
                 start= s.indexOf(",",start)+1;
-            }
-            catch(Exception e){
+                }
+                else{
                 s1 = s.substring(start, s.length());
                 start = len;
-            }
+                }
             System.out.println(s1);
         }
     }
